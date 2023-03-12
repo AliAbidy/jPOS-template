@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<channel-adaptor name='jpos-channel' class="org.jpos.q2.iso.ChannelAdaptor" logger="Q2">
+    <channel class="com.field39.CustomChannel"
+         packager="org.jpos.iso.packager.GenericPackager">
+
+<!--        <property name="host" value="146.190.206.247" />
+        <property name="port" value="4446" />-->
+        <property name="host" value="localhost" />
+        <property name="port" value="8000" />
+        <property name="packager-config" value="cfg/field39packager.xml"/>
+        <property name="include-header-length" value="true" />
+    </channel>
+    <in>jpos-send</in>
+    <out>jpos-receive</out>
+    <reconnect-delay>10000</reconnect-delay>
+</channel-adaptor>
+

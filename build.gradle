@@ -16,6 +16,11 @@ repositories {
 
 dependencies {
     implementation 'org.jpos:jpos:2.1.8-SNAPSHOT'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 apply from: 'jpos-app.gradle'

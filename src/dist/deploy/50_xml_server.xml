@@ -1,0 +1,16 @@
+<server class="org.jpos.q2.iso.QServer" logger="Q2" name="xml-server-8000" realm="xml-server-8000">
+    <attr name="port" type="java.lang.Integer">8000</attr>
+    <channel class="com.field39.CustomChannel"
+             packager="org.jpos.iso.packager.GenericPackager"
+             type="server"
+             logger="Q2"
+             realm="xml-server-8000">
+        <property name="timeout" value="180000"/>
+        <property name="packager-config" value="cfg/field39packager.xml"/>
+        <property name="include-header-length" value="true" />
+    </channel>
+    <request-listener class="com.field39.Listener" logger="Q2" realm="incoming-request-listener">
+        <property name="queue"  value="TXNMGR" />
+        <property name="ctx.DESTINATION"  value="jPOS-AUTORESPONDER" />
+    </request-listener>
+</server>
